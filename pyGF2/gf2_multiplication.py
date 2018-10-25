@@ -1,5 +1,5 @@
 import numpy as np
-from generic_functions import strip_zeros
+from pyGF2.generic_functions import strip_zeros
 
 def gf2_mul(a, b):
     """Multiply polynomials in GF(2)
@@ -27,13 +27,13 @@ def gf2_mul(a, b):
     array([1, 1, 0, 1, 1], dtype=uint8)
 """
 
-    #cast here ?#TODO also use bools ?
+    #cast here ?#TODO also use uint8s ?
 
     fsize = len(a) + len(b) - 1
 
-    fsize = 2*fsize #** np.ceil(np.log2(fsize)).astype(int) #TODO better to use powers of 2 ?
+    fsize = 2**np.ceil(np.log2(fsize)).astype(int) #use nearest power of two much faster
 
-    fslice = slice(0, fsize//2)
+    fslice = slice(0, fsize)
 
     ta = np.fft.fft(a, fsize)
     tb = np.fft.fft(b, fsize)

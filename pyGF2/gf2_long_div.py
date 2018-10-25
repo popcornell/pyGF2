@@ -1,14 +1,5 @@
 import numpy as np
-from generic_functions import strip_zeros
-from gf2_multiplication import gf2_mul
-from gf2_add import gf2_add
-from scipy.signal.signaltools import lfilter
-import numpy.core.numeric as NX
-import numba
-
-
-
-
+from pyGF2.generic_functions import strip_zeros
 
 
 def gf2_div(dividend, divisor):

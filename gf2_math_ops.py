@@ -1,9 +1,7 @@
 import numba
 
 import numpy as np
-from generic_functions import strip_zeros, to_same_dim, unitary_pol, zeros, padding
-from scipy import signal
-
+from pyGF2.generic_functions import strip_zeros, to_same_dim, unitary_pol, zeros, padding
 
 '''
 POLYNOMIAL MULTIPLICATION
@@ -260,10 +258,6 @@ def main():
     from sympy_math_ops import gf2_inv as sympy_inv
 
     from sympy_math_ops import gf2_mul as sympy_mul
-
-    from sympy_math_ops import gf2_div as sympy_div
-
-    from sympy_math_ops import gf2_gcd
 
     for i in range(100):
 

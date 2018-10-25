@@ -1,24 +1,23 @@
 import unittest
 import numpy as np
-from gf2_long_div import gf2_div
-from gf2_multiplication import gf2_mul
-from gf2_add import gf2_add
-from generic_functions import strip_zeros
-from gf2_inv import xgcd
+from pyGF2 import gf2_add, gf2_mul, gf2_div, gf2_xgcd, strip_zeros
+
 
 class test_gf2(unittest.TestCase):
+    """Test pyGF2 functions with random polynomials"""
 
 
 
     def test_gf2_add(self):
+        """Check if addition and subtraction are the same"""
 
 
         for i in range(100):
-            grade1 = np.random.randint(0, 11084, 1)
-            grade2 = np.random.randint(0, 11084, 1)
+            degree1 = np.random.randint(0, 11084, 1)
+            degree2 = np.random.randint(0, 11084, 1)
 
-            a = np.random.randint(0, 2, grade1, dtype='uint8')
-            b = np.random.randint(0, 2, grade2, dtype='uint8')
+            a = np.random.randint(0, 2, degree1, dtype='uint8')
+            b = np.random.randint(0, 2, degree2, dtype='uint8')
 
             sum = gf2_add(a, b)
 
@@ -30,18 +29,19 @@ class test_gf2(unittest.TestCase):
 
 
     def test_gf2_mul(self):
+        """Check multiplication using distributive property"""
 
         for i in range(100):
 
-            grade1 = np.random.randint(0, 11084, 1)
-            grade2 = np.random.randint(0, 11084, 1)
-            grade3 = np.random.randint(0, 11084, 1)
+            degree1 = np.random.randint(0, 11084, 1)
+            degree2 = np.random.randint(0, 11084, 1)
+            degree3 = np.random.randint(0, 11084, 1)
 
             # distributive property
 
-            a = np.random.randint(0, 2, grade1, dtype='uint8')
-            b = np.random.randint(0, 2, grade2, dtype='uint8')
-            c = np.random.randint(0, 2, grade3, dtype='uint8')
+            a = np.random.randint(0, 2, degree1, dtype='uint8')
+            b = np.random.randint(0, 2, degree2, dtype='uint8')
+            c = np.random.randint(0, 2, degree3, dtype='uint8')
 
             res1 = gf2_mul(c, gf2_add(a,b))
 
@@ -57,23 +57,25 @@ class test_gf2(unittest.TestCase):
 
 
     def test_gf2_div(self):
+        """Test polynomial divisiopn in GF2"""
 
         for i in range(100):
             
-            grade1 = np.random.randint(0, 11084, 1)
-            grade2 = np.random.randint(0, 11084, 1)
+            degree1 = np.random.randint(0, 11084, 1)
+            degree2 = np.random.randint(0, 11084, 1)
 
-            dividend = np.random.randint(0, 2, grade1)
-            divisor = np.random.randint(0, 2, grade2)
+            dividend = np.random.randint(0, 2, degree1, dtype="uint8")
+            divisor = np.random.randint(0, 2, degree2, dtype="uint8")
 
             quotient, remainder = gf2_div(dividend, divisor)
 
             dividend2 = gf2_add(gf2_mul(quotient, divisor), remainder)
 
-            assert np.array_equal(dividend, dividend2) == True
+            assert np.array_equal(strip_zeros(dividend), dividend2) == True
 
 
     def test_gf2_inv(self):
+        """Test Extended Euclidean Algorithm in GF2"""
 
         p = 11083
 
@@ -83,11 +85,11 @@ class test_gf2(unittest.TestCase):
 
             irr_poly = np.array([1] + [0] * (p - 1) + [1], dtype='uint8')
 
-            s1,t1, h1 = xgcd(a, irr_poly)
+            s,t, h = gf2_xgcd(a, irr_poly)
 
-            check = gf2_add( gf2_mul(a, s1), gf2_mul(irr_poly, t1))
+            check = gf2_add( gf2_mul(a, s), gf2_mul(irr_poly, t))
 
-            assert np.array_equal(check, h1) == True
+            assert np.array_equal(check, h) == True
 
 
 
