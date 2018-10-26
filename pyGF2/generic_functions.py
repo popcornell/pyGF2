@@ -8,12 +8,39 @@ def strip_zeros(a):
     return np.trim_zeros(a, trim='b')
 
 
-def padding(a, dim):
+def check_type(a, b):
+    """Type check and force cast to uint8 ndarray
 
-    return np.pad(a, (dim-len(a), 0), 'constant', constant_values=(0))
+    Notes
+    -----
+    Ideally for best performance one should always use uint8 or bool when using this library.
+
+    """
+
+    if isinstance(a, np.ndarray):
+        a = np.array(a, dtype="uint8")
+    if isinstance(b, np.ndarray):
+        b = np.array(b, dtype="uint8")
+
+    if a.dtype is not "uint8":
+        a = a.astype("uint8")
+
+    if b.dtype is not "uint8":
+        b = b.astype("uint8")
+
+    return a, b
+
+
+def padding(a, dim):
+    """Zero-pad input array a a to length dim, zeroes are appended at the right"""
+
+    return np.pad(a, (0, dim-len(a)), 'constant', constant_values=(0))
 
 
 def to_same_dim(a, b):
+    """Given two arrays a and b returns the two arrays with the shorter zero-padded to have
+    the same dimension of the longer. The arrays are padded with zeroes appended to the right.
+    """
 
     if len(a) > len(b):
        return a, padding(b, len(a))

@@ -1,35 +1,19 @@
 import numpy as np
-from pyGF2.generic_functions import strip_zeros
+from pyGF2.generic_functions import strip_zeros, check_type
 
 
 
 def xor(a, b):
+    """Computes the element-wise XOR of two ndarrays"""
 
     return np.logical_xor(a, b, dtype='uint8').astype("uint8")
 
 
-def check_type(a, b):
-
-    if isinstance(a, np.ndarray):
-        a = np.array(a, dtype="uint8")
-    if isinstance(b, np.ndarray):
-        b = np.array(b, dtype="uint8")
-
-    if a.dtype is not "uint8":
-        a = a.astype("uint8")
-
-    if b.dtype is not "uint8":
-        b = b.astype("uint8")
-
-    return a, b
 
 
 def gf2_add(a, b):
 
-    """Add polynomials in GF(2)
-
-    NOTE: rightmost array element is
-          the leading coefficient
+    """Add two polynomials in GF(p)[x]
 
     Parameters
     ----------
@@ -41,6 +25,13 @@ def gf2_add(a, b):
     -------
     q : ndarray of uint8
         Resulting polynomial's coefficients.
+
+
+    Notes
+    -----
+    Rightmost element in the arrays is the leading coefficient of the polynomial.
+    In other words, the ordering for the coefficients of the polynomials is like the one used in MATLAB while
+    in Sympy, for example, the leftmost element is the leading coefficient.
 
     Examples
     ========

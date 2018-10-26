@@ -2,10 +2,8 @@ import numpy as np
 from pyGF2.generic_functions import strip_zeros
 
 def gf2_mul(a, b):
-    """Multiply polynomials in GF(2)
-
-    NOTE: rightmost array element is
-          the leading coefficient
+    """Multiply polynomials in GF(2), FFT instead of convolution in time domain is used
+       to speed up computation significantly.
 
     Parameters
     ----------
@@ -27,8 +25,6 @@ def gf2_mul(a, b):
     array([1, 1, 0, 1, 1], dtype=uint8)
 """
 
-    #cast here ?#TODO also use uint8s ?
-
     fsize = len(a) + len(b) - 1
 
     fsize = 2**np.ceil(np.log2(fsize)).astype(int) #use nearest power of two much faster
@@ -42,4 +38,4 @@ def gf2_mul(a, b):
 
     k = np.mod(np.rint(np.real(res)), 2).astype('uint8')
 
-    return strip_zeros(k) #TODO really strip ?
+    return strip_zeros(k)
