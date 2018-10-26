@@ -6,7 +6,44 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889443ed-6871-4849-9914-4294beedcaab" name="Default" comment="" />
+    <list default="true" id="889443ed-6871-4849-9914-4294beedcaab" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/conf.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/doctrees/environment.pickle" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/doctrees/index.doctree" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/.buildinfo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/.nojekyll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_sources/index.rst.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/ajax-loader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/alabaster.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/basic.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/comment-bright.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/comment-close.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/comment.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/custom.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/doctools.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/down-pressed.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/down.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/file.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/jquery-3.1.0.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/jquery.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/minus.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/plus.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/pygments.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/searchtools.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/underscore-1.3.1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/underscore.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/up-pressed.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/up.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_static/websupport.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/genindex.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/objects.inv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/search.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/html/searchindex.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/index.rst" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -744,6 +781,22 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
