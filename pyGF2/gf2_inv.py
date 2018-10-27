@@ -1,6 +1,6 @@
 import numpy as np
 from pyGF2.generic_functions import strip_zeros
-from pyGF2.gf2_long_div import gf2_div
+from pyGF2.gf2_div import gf2_div
 from pyGF2.gf2_add import gf2_add
 
 
