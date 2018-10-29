@@ -74,7 +74,7 @@ class test_gf2(unittest.TestCase):
             assert np.array_equal(strip_zeros(dividend), dividend2) == True
 
 
-    def test_gf2_inv(self):
+    def test_gf2_xgcd(self):
         """Test Extended Euclidean Algorithm in GF2"""
 
         p = 11083
