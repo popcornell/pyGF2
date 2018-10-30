@@ -39,3 +39,12 @@ For Example:
 
  - **sympy.galoistools.gf_gcdex** vs **gf2_xgcd** for two random GF2\[x] polynomial with 11083 elements:
    **2 m 5 s vs 1.29 s**
+   
+---
+ 
+
+## Requirements : NumPy (tested with NumPy 1.13.3 and Python 3.6.3)  
+
+---
+   
+   
